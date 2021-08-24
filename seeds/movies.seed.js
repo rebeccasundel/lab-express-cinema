@@ -86,4 +86,11 @@ const movies = [
   // Add here the script that will be run to actually seed the database (feel free to refer to the previous lesson)
   
   // ... your code here
+
+  Movie.create(movies).then((moviesFromDB) => {
+    console.log(`Created ${moviesFromDB.length} movies`);
+
+    // Once created, close the DB connection
+   mongoose.connection.close();
+});
   
